@@ -11,8 +11,8 @@ import java.util.Date;
 public class TwitterApiApplication {
 
 	static{
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss");
-		System.setProperty("current.date.time", dateFormat.format(new Date()));
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		System.setProperty("current.date", dateFormat.format(new Date()));
 	}
 
 	static Logger log = Logger.getLogger(TwitterApiApplication.class.getName());
