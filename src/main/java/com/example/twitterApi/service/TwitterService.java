@@ -5,6 +5,7 @@ import com.example.twitterApi.model.TwitterDetails;
 import org.springframework.stereotype.Service;
 import twitter4j.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -20,7 +21,7 @@ public class TwitterService {
         return twitterDao.postingTweet(msg);
     }
 
-    public List<TwitterDetails> gettingInfo() throws TwitterException{
-        return twitterDao.gettingInfo();
+    public HashMap<String,TwitterDetails> postingMsg(List<TwitterDetails> data) throws TwitterException{
+        return twitterDao.postingMsg(data);
     }
 }

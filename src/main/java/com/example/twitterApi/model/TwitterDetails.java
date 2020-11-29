@@ -4,30 +4,17 @@ import java.util.Date;
 
 public class TwitterDetails {
 
-    String text;
     String name;
-    String screenName;
-    Date createdAt;
-    String profileImageUrl;
-
-    public TwitterDetails(String text, String name, String screenName, Date createdAt, String profileImageUrl) {
-        this.text = text;
-        this.name = name;
-        this.screenName = screenName;
-        this.createdAt = createdAt;
-        this.profileImageUrl = profileImageUrl;
-    }
+    String email;
+    String tweet;
 
     public TwitterDetails() {
 
     }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
+    public TwitterDetails(String name, String email, String tweet) {
+        this.name = name;
+        this.email = email;
+        this.tweet = tweet;
     }
 
     public String getName() {
@@ -38,37 +25,28 @@ public class TwitterDetails {
         this.name = name;
     }
 
-    public Date getCreatedAt() {
-        return createdAt;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getProfileImageUrl() {
-        return profileImageUrl;
+    public String getTweet() {
+        return tweet;
     }
 
-    public void setProfileImageUrl(String profileImageUrl) {
-        this.profileImageUrl = profileImageUrl;
-    }
-
-    public String getScreenName() {
-        return screenName;
-    }
-
-    public void setScreenName(String screenName) {
-        this.screenName = screenName;
+    public void setTweet(String tweet) {
+        this.tweet = tweet;
     }
 
     @Override
     public String toString() {
         return "TwitterDetails{" +
-                "text='" + text + '\'' +
-                ", name='" + name + '\'' +
-                ", createdAt=" + createdAt +
-                ", photoImageUrl='" + profileImageUrl + '\'' +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", tweet='" + tweet + '\'' +
                 '}';
     }
 }

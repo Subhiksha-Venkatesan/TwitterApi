@@ -3,11 +3,11 @@ package com.example.twitterApi.resource;
 import com.example.twitterApi.model.TwitterDetails;
 import com.example.twitterApi.service.TwitterService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 import twitter4j.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -28,8 +28,9 @@ public class TwitterController {
         return twitterService.postingTweet(msg);
     }
 
-    @RequestMapping(value = "/getInfo", method = RequestMethod.GET)
-    public List<TwitterDetails> gettingInfo() throws TwitterException {
-        return twitterService.gettingInfo();
+    @RequestMapping(value = "/posting", method = RequestMethod.POST)
+    public HashMap<String,TwitterDetails> postingMsg(@RequestBody List<TwitterDetails> data) throws TwitterException {
+        return twitterService.postingMsg(data);
     }
+
 }
