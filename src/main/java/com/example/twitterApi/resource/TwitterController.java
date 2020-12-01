@@ -3,6 +3,7 @@ package com.example.twitterApi.resource;
 import com.example.twitterApi.model.TwitterDetails;
 import com.example.twitterApi.service.TwitterService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMethod;
 import twitter4j.*;
@@ -10,16 +11,17 @@ import twitter4j.*;
 import java.util.HashMap;
 import java.util.List;
 
-
 @RestController
 @RequestMapping("/tweet")
 public class TwitterController {
 
     @Autowired
-    private TwitterService twitterService;
+    TwitterService twitterService;
 
     @RequestMapping(value = "/getTweets", method = RequestMethod.GET)
+    @Cacheable(value = "tweetInfo")
     public ResponseList<Status> getFeed() throws TwitterException {
+        System.out.println("hello");
         return twitterService.gettingFeed();
     }
 
